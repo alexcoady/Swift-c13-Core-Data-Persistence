@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         let request = NSFetchRequest(entityName: lineEntityName)
         
         var error: NSError? = nil
-        let objects = context?.executeFetchRequest(request, error: error)
+        let objects = context?.executeFetchRequest(request, error: &error)
         
         if let objectList = objects {
             
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         
         var error: NSError? = nil
         
-        for var i = 0; i < lineFields.count; i += 1 {
+        for var i = 0; i < lineFields?.count; i += 1 {
             
             let textField = lineFields[i]
             let request = NSFetchRequest(entityName: lineEntityName)
